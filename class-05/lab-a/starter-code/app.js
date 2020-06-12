@@ -58,7 +58,8 @@ function sumAndMultiply(a, b, c) {
   var m = multiply(multiply(a, b)[0], c)[0];
 
   var msg1 = a + " and " + b + " and " + c + " sum to " + s + ".";
-  var msg2 = "The product of " + a + " and " + b + " and " + c + " is " + m + ".";
+  var msg2 =
+    "The product of " + a + " and " + b + " and " + c + " is " + m + ".";
 
   return [s, m, msg1, msg2];
 }
@@ -82,12 +83,20 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) {
-    var total = 0;
-    for (var i = 0; i < sumArr.length; i++) {
-      total = sum(total, sumArr[i])[0];
-    }
-    var msg = sumArr[0]+','+sumArr[1]+','+sumArr[2]+' was passed in as an array of numbers, and '+total+' is their sum.';
-    return [total, msg];
+  var total = 0;
+  for (var i = 0; i < sumArr.length; i++) {
+    total = sum(total, sumArr[i])[0];
+  }
+  var msg =
+    sumArr[0] +
+    "," +
+    sumArr[1] +
+    "," +
+    sumArr[2] +
+    " was passed in as an array of numbers, and " +
+    total +
+    " is their sum.";
+  return [total, msg];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
@@ -111,7 +120,16 @@ function multiplyArray(multArr) {
   for (var i = 0; i < multArr.length; i++) {
     total = multiply(total, multArr[i])[0];
   }
-  var msg = "The numbers "+multArr[0]+","+multArr[1]+","+multArr[2]+" have a product of "+total+".";
+  var msg =
+    "The numbers " +
+    multArr[0] +
+    "," +
+    multArr[1] +
+    "," +
+    multArr[2] +
+    " have a product of " +
+    total +
+    ".";
   return [total, msg];
 }
 
@@ -140,10 +158,21 @@ Test this function by hand in the console to get it working, and when you think 
 var testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) {
-  //eslint-disable-line
+  var total = 1;
+  var str = "";
+  for (var i = 0; i < dynamicArray.length; i++) {
+    total = multiply(total, dynamicArray[i])[0];
+    if(i < dynamicArray.length-1){
+        str = str + dynamicArray[i] + ",";
+    }else{
+        str = str +dynamicArray[i]
+    }    
+  }
+  var msg = "The numbers " + str + " have a product of " + total + ".";
+  return [total, msg];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
