@@ -58,7 +58,7 @@ main {
   font-size: 1.5em;
   font-weight: 600;
   text-align: center;
-  background-color: #feb95f;
+  background-color: #98D2EB;
   padding: 20px 20px;
   color: #333;
 }
@@ -81,7 +81,7 @@ main {
 
 .col-2 .card {
   width: 100%;
-  background-color: #feb95f;
+  background-color: #EABFCB;
 }
 
 .col-2 .card .copy {
@@ -115,7 +115,7 @@ select {
 }
 
 input[type="submit"] {
-  background-color: #333;
+  background-color: #637081;
   color: white;
   padding: 16px 20px;
   border: none;
@@ -127,7 +127,7 @@ input[type="submit"] {
 }
 
 #cartContents {
-  background-color: #333;
+  background-color: #637081;
   padding: 30px;
   color: #fff;
   font-size: 1.3em;
@@ -140,7 +140,7 @@ input[type="submit"] {
 }
 
 #cartContents ul li {
-  background-color: #feb95f;
+  background-color: #386FA4;
   margin: 10px 0;
   padding: 20px;
   color: #333;
