@@ -1,5 +1,6 @@
 /* global Cart */
 "use strict";
+loadCounter();
 
 // Create an event listener so that when the delete link is clicked, the removeItemFromCart method is invoked.
 var table = document.getElementById("cart");
@@ -60,7 +61,7 @@ function removeItemFromCart(event) {
   // TODO: When a delete link is clicked, use cart.removeItem to remove the correct item
   // console.log(event.target.id);
   cart.removeItem(event.target.id);
-
+  updateCounter();
   // TODO: Save the cart back to local storage
   cart.saveToLocalStorage();
 
@@ -70,6 +71,13 @@ function removeItemFromCart(event) {
 
 // This will initialize the page and draw the cart on screen
 renderCart();
+
+// TODO: Update the cart count in the header nav with the number of items in the Cart
+function updateCounter() {
+  // console.log(counter);
+  var couterSpan = document.getElementById("itemCount");
+  couterSpan.textContent = counter;
+}
 
 //creating and appending the user form
 var formInputs = document.createElement("form");

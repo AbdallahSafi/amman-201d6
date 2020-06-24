@@ -1,5 +1,4 @@
 /* global Product, Cart */
-
 "use strict";
 loadCounter();
 // Set up an empty cart for use on this page.
@@ -35,8 +34,7 @@ function handleSubmit(event) {
 
 // TODO: Add the selected item and quantity to the cart
 function addSelectedItemToCart() {
-  counter += 1;
-  storeCounter();
+ 
   // TODO: suss out the item picked from the select list
   item_selected = items.options[items.selectedIndex].value;
 
@@ -81,18 +79,3 @@ catalogForm.addEventListener("submit", handleSubmit);
 // drop down list in the form.
 populateForm();
 
-
-//Store the counter in the storage
-function storeCounter(){
-  localStorage.setItem('counter', counter);
-}
-
-//load the stored counter and update the cart
-function loadCounter(){
-  if(localStorage.getItem('counter') === null){
-    console.log('there is none');
-    return;
-  }
-  counter = Number(localStorage.getItem('counter')); 
-  updateCounter();
-}

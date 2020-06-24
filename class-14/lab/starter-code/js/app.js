@@ -1,5 +1,6 @@
 "use strict";
 var counter = 0;
+
 // Cart constructor.
 var Cart = function (items) {
   // this.items is an array of CartItem instances.
@@ -7,6 +8,9 @@ var Cart = function (items) {
 };
 
 Cart.prototype.addItem = function (product, quantity) {
+  console.log('add', counter);
+  counter +=1;
+  storeCounter();
   // TODO: Fill in this instance method to create a new CartItem and add it to this.items
   var productItem = new CartItem(product, quantity);
   this.items.push(productItem);
@@ -19,6 +23,10 @@ Cart.prototype.saveToLocalStorage = function () {
 };
 
 Cart.prototype.removeItem = function (item) {
+  console.log('remove', counter);
+  counter -=1;
+  storeCounter();
+
   // TODO: Fill in this instance method to remove one item from the cart.
   // Note: You will have to decide what kind of parameter to pass in here!
   console.log(item);
@@ -64,4 +72,17 @@ function generateCatalog() {
 // Initialize the app by creating the big list of products with images and names
 generateCatalog();
 
-//Load the counter from storage
+//Store the counter in the storage
+function storeCounter(){
+  localStorage.setItem('counter', counter);
+}
+
+//load the stored counter and update the cart
+function loadCounter(){
+  if(localStorage.getItem('counter') === null){
+    console.log('there is none');
+    return;
+  }
+  counter = Number(localStorage.getItem('counter')); 
+  updateCounter();
+}
