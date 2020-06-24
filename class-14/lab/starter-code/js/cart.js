@@ -71,3 +71,101 @@ renderCart();
 
 // This will initialize the page and draw the cart on screen
 renderCart();
+
+var formInputs=document.createElement('form');
+formInputs.getAttribute('id','checkout');
+var fieldSET=document.createElement('fieldset');
+
+formInputs.appendChild(fieldSET);
+var leg =document.createElement('legend')
+leg.textContent = 'Checkout'
+fieldSET.appendChild(leg);
+var namelabel=document.createElement('label');
+namelabel.setAttribute('for','name')
+namelabel.textContent ='Name'
+var nameInput=document.createElement('input');
+nameInput.setAttribute('type','text');
+nameInput.setAttribute('id','name');
+// nameInput.setAttribute('required');
+fieldSET.appendChild(namelabel);
+fieldSET.appendChild(nameInput);
+
+
+var streetlabel=document.createElement('label');
+streetlabel.setAttribute('for','street')
+streetlabel.textContent ='street'
+var streetInput=document.createElement('input');
+streetInput.setAttribute('type','text');
+streetInput.setAttribute('id','street');
+// streetInput.setAttribute('required');
+fieldSET.appendChild(streetlabel);
+fieldSET.appendChild(streetInput);
+
+
+
+var citylabel=document.createElement('label');
+citylabel.setAttribute('for','city')
+citylabel.textContent ='city'
+var cityInput=document.createElement('input');
+cityInput.setAttribute('type','text');
+cityInput.setAttribute('id','street');
+// cityInput.setAttribute('required');
+fieldSET.appendChild(citylabel);
+fieldSET.appendChild(cityInput);
+
+
+var statelabel=document.createElement('label');
+statelabel.setAttribute('for','state')
+statelabel.textContent ='state'
+var stateInput=document.createElement('input');
+stateInput.setAttribute('type','text');
+stateInput.setAttribute('id','state');
+// stateInput.setAttribute('required');
+fieldSET.appendChild(statelabel);
+fieldSET.appendChild(stateInput);
+
+
+var ZIPCodelabel=document.createElement('label');
+ZIPCodelabel.setAttribute('for','ZIPCode')
+ZIPCodelabel.textContent ='ZIPCode'
+var ZIPCodeInput=document.createElement('input');
+ZIPCodeInput.setAttribute('type','text');
+ZIPCodeInput.setAttribute('id','ZIPCode');
+// ZIPCodeInput.setAttribute('required');
+fieldSET.appendChild(ZIPCodelabel);
+fieldSET.appendChild(ZIPCodeInput);
+
+
+var phoneNumberlabel=document.createElement('label');
+phoneNumberlabel.setAttribute('for','phoneNumber')
+phoneNumberlabel.textContent ='phoneNumber'
+var phoneNumberInput=document.createElement('input');
+phoneNumberInput.setAttribute('type','text');
+phoneNumberInput.setAttribute('id','phoneNumber');
+// phoneNumberInput.setAttribute('required');
+fieldSET.appendChild(phoneNumberlabel);
+fieldSET.appendChild(phoneNumberInput);
+
+
+
+var creditCardNumberlabel=document.createElement('label');
+creditCardNumberlabel.setAttribute('for','creditCardNumber')
+creditCardNumberlabel.textContent ='creditCardNumber'
+var creditCardNumberInput=document.createElement('input');
+creditCardNumberInput.setAttribute('type','number');
+creditCardNumberInput.setAttribute('id','creditCardNumber');
+creditCardNumberInput.setAttribute('maxlength',16);
+// creditCardNumberInput.setAttribute('required');
+
+fieldSET.appendChild(creditCardNumberlabel);
+fieldSET.appendChild(creditCardNumberInput);
+
+
+var inputSub=document.createElement('input');
+inputSub.setAttribute('type','submit')
+inputSub.setAttribute('value','Process Order');
+
+fieldSET.appendChild(inputSub);
+
+var mainTag=document.getElementsByTagName('main')[0];
+mainTag.appendChild(formInputs);
