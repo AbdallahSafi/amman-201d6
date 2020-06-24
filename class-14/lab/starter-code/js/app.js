@@ -1,5 +1,21 @@
 'use strict';
 
+var items=document.getElementById('items');
+
+// adding an eventListner to get the product name and product quantitiy in submit
+var formProduct=document.getElementById('catalog');
+formProduct.addEventListener('submit',handelForm)
+ 
+function handelForm(event){
+  event.preventDefault();
+  var quantityItems =document.getElementById('quantity')
+  var quantitiyvalue = quantityItems.value;
+  var item_selected = items.options[items.selectedIndex].value;
+// console.log('quantity' , quantitiyvalue)
+// console.log('fdfd',item_selected);
+new CartItem (item_selected,quantitiyvalue);
+
+}
 // Cart constructor.
 var Cart = function(items) {
   // this.items is an array of CartItem instances.
@@ -57,3 +73,14 @@ function generateCatalog() {
 
 // Initialize the app by creating the big list of products with images and names
 generateCatalog();
+console.log(Product.allProducts);
+selectItems (); //this function will fill the options with the select items
+
+function selectItems (){
+for (var i=0 ;i<Product.allProducts.length ; i++) {
+  var itemsOption=document.createElement('option');
+  itemsOption.setAttribute('value', Product.allProducts[i].name)
+  itemsOption.textContent=Product.allProducts[i].name ;
+  items.appendChild(itemsOption);
+}
+}
